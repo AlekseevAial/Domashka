@@ -1,14 +1,16 @@
-seconds_in_day = 86400
-seconds_in_hour = 3600
-seconds_in_minute = 60
+SECONDS_IN_DAY = 86400
+SECONDS_IN_HOUR = 3600
+SECONDS_IN_MINUTE = 60
 seconds = int(input("Пожалуйста введите число: "))
-days = seconds // seconds_in_day
-seconds = seconds - (days * seconds_in_day)
-hours = seconds // seconds_in_hour
-seconds = seconds - (hours * seconds_in_hour)
-minutes = seconds // seconds_in_minute
-seconds = seconds - (minutes * seconds_in_minute)
-print("{0:.0f} days, {1:.0f} hours, {2:.0f} minutes, {3:.0f} seconds.".format(
-    days, hours, minutes, seconds))
-
+if seconds <= 60:
+    print(seconds, 'sec')
+else:
+    days = seconds // SECONDS_IN_DAY
+    seconds = seconds - (days * SECONDS_IN_DAY)
+    hours = seconds // SECONDS_IN_HOUR
+    seconds = seconds - (hours * SECONDS_IN_HOUR)
+    minutes = seconds // SECONDS_IN_MINUTE
+    seconds = seconds - (minutes * SECONDS_IN_MINUTE)
+    print("{0:.0f} days, {1:.0f} hours, {2:.0f} minutes, {3:.0f} seconds."
+      .format(days, hours, minutes, seconds))
 
